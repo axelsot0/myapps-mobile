@@ -1,0 +1,12 @@
+{
+  "name": "myapps-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["apps/mobile"],
+  "scripts": {
+    "mobile": "cd apps/mobile && npm run start",
+    "typecheck": "cd apps/mobile && npm run typecheck",
+    "lint": "cd apps/mobile && npm run lint",
+    "test": "cd apps/mobile && npm run test"
+  }
+}
