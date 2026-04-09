@@ -54,7 +54,7 @@ export default function FocusTimerScreen() {
   const [secondsRemaining, setSecondsRemaining] = useState(selectedDuration * 60);
   const [showDurationPicker, setShowDurationPicker] = useState(false);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
-  const [sessionStartedAt, setSessionStartedAt] = useState<Date | null>(null);
+  const [_sessionStartedAt, setSessionStartedAt] = useState<Date | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const clearTimer = useCallback(() => {
@@ -87,9 +87,9 @@ export default function FocusTimerScreen() {
 
   const stopTimer = () => {
     clearTimer();
-    const elapsed = selectedDuration * 60 - secondsRemaining;
     // TODO: Write focus_sessions record to SQLite in MYAAA-11 implementation
-    // { taskId: params.taskId, startedAt: sessionStartedAt, durationSeconds: elapsed, wasCompleted: false }
+    // const elapsed = selectedDuration * 60 - secondsRemaining;
+    // { taskId: params.taskId, startedAt: _sessionStartedAt, durationSeconds: elapsed, wasCompleted: false }
     router.back();
   };
 
